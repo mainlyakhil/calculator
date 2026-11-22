@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A clean, keyboard-accessible arithmetic calculator built with vanilla HTML, CSS, and JavaScript.">
     <title>Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="calculator">
+    <main class="calculator" aria-label="Calculator">
         <div class="display">
-            <input type="text" id="result" disabled>
+            <input type="text" id="result" aria-label="Calculator display" placeholder="0" readonly>
         </div>
         <div class="keys">
-            <button onclick="clearResult()">C</button>
-            <button onclick="deleteLast()">DEL</button>
-            <button onclick="appendOperator('/')">/</button>
-            <button onclick="appendOperator('*')">*</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="appendOperator('-')">-</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="appendOperator('+')">+</button>
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button onclick="calculateResult()">=</button>
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
+            <button type="button" class="btn-action" onclick="clearResult()" aria-label="Clear">C</button>
+            <button type="button" class="btn-action" onclick="deleteLast()" aria-label="Delete last character">DEL</button>
+            <button type="button" class="btn-operator" onclick="appendOperator('/')" aria-label="Divide">&divide;</button>
+            <button type="button" class="btn-operator" onclick="appendOperator('*')" aria-label="Multiply">&times;</button>
+
+            <button type="button" onclick="appendNumber('7')">7</button>
+            <button type="button" onclick="appendNumber('8')">8</button>
+            <button type="button" onclick="appendNumber('9')">9</button>
+            <button type="button" class="btn-operator" onclick="appendOperator('-')" aria-label="Subtract">&minus;</button>
+
+            <button type="button" onclick="appendNumber('4')">4</button>
+            <button type="button" onclick="appendNumber('5')">5</button>
+            <button type="button" onclick="appendNumber('6')">6</button>
+            <button type="button" class="btn-operator" onclick="appendOperator('+')" aria-label="Add">+</button>
+
+            <button type="button" onclick="appendNumber('1')">1</button>
+            <button type="button" onclick="appendNumber('2')">2</button>
+            <button type="button" onclick="appendNumber('3')">3</button>
+            <button type="button" class="btn-equals" onclick="calculateResult()" aria-label="Equals">=</button>
+
+            <button type="button" class="btn-zero" onclick="appendNumber('0')">0</button>
+            <button type="button" onclick="appendNumber('.')" aria-label="Decimal point">.</button>
         </div>
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
